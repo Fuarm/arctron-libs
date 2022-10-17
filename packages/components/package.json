@@ -1,5 +1,5 @@
 {
-  "name": "components",
+  "name": "@arctron-cim/components",
   "version": "0.0.1",
   "description": "组件库",
   "author": "苟富军 <750108747@qq.com>",
@@ -17,7 +17,6 @@
     "registry": "http://127.0.0.1:4873"
   },
   "scripts": {
-    "build": "microbundle",
-    "test": "node ./__tests__/index.spec.ts"
+    "build": "microbundle"
   }
 }

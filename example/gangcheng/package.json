@@ -12,10 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@arctron-cim/hooks": "workspace:^0.0.1",
-    "vue": "^3.2.40"
-  },
-  "devDependencies": {
-    "vue-loader": "^17.0.0"
+    "@arctron-cim/hooks": "workspace:^0.0.1"
   }
 }
