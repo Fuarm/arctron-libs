@@ -89,7 +89,10 @@ const webpackBaseConfig = {
 		//   Buffer: ['buffer', 'Buffer'],
 		// }),
 		new CleanWebpackPlugin(),
-		new WebpackBar(),
+		new WebpackBar({
+			name: "港城 CIM",
+			color: '#2dc9d1'
+		}),
 		new Dotenv(),
 	],
 }

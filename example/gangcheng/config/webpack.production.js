@@ -4,10 +4,12 @@ const { join, resolve } = require('path')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 // optimize-css-assets-webpack-plugin
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const webpack = require('webpack')
 module.exports = {
 	output: {
-		path: join(__dirname, '../dist/assets'),
-		publicPath: '/',
+		path: join(__dirname, '../dist'),
+		publicPath: './',
 		filename: 'scripts/[name].[contenthash:5].bundule.js',
 		assetModuleFilename: 'images/[name].[hash:5][ext]',
 	},
