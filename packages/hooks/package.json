@@ -1,0 +1,32 @@
+{
+  "name": "@arctron-cim/hooks",
+  "version": "0.0.1",
+  "description": "> TODO: description",
+  "author": "苟富军 <750108747@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "type": "module",
+  "source": "lib/index.ts",
+  "main": "build/hooks.js",
+  "exports": {
+    "require": "./build/hooks.cjs",
+    "default": "./build/hooks.esm.js"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://127.0.0.1:4873"
+  },
+  "scripts": {
+    "build": "microbundle",
+    "test": "node ./__tests__/index.spec.ts"
+  },
+  "dependencies": {
+    "vue": "^3.2.40"
+  }
+}

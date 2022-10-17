@@ -1,0 +1,9 @@
+# node 包
+packages/**/node_modules/
+packages/**/dist/
+
+# 文档
+docs/
+
+# 覆盖率测试生成文件
+coverage/

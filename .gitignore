@@ -1,0 +1,16 @@
+# 编辑器文件
+.vscode
+.idea
+.DS_Store
+
+# node 包
+node_modules
+
+# dist 打包文件
+dist
+build
+
+# jest 单测包
+coverage
+
+# error 日志

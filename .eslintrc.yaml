@@ -1,0 +1,21 @@
+env:
+  browser: true
+  es2021: true
+extends:
+  - airbnb-typescript/base
+  - prettier
+  - plugin:prettier/recommended
+parser: "@typescript-eslint/parser"
+parserOptions:
+  project: ./tsconfig.eslint.json
+plugins:
+  - "@typescript-eslint"
+  - import
+settings:
+  - import/resolver:
+    - typescript: {}
+rules: 
+  prettier/prettier: error
+  no-console: off
+  "@typescript-eslint/no-useless-constructor": off
+  "@typescript-eslint/no-unused-expressions": off
