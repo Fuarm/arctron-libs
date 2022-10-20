@@ -1,4 +1,10 @@
-export * as useState from './core/useState'
-export * as useEffect from './core/useEffect'
+import useState from './core/useState'
+import useEffect from './core/useEffect'
 
-export const data = '123'
+import useInterval from './event/useInterval'
+
+export {
+  useState,
+  useEffect,
+  useInterval
+}

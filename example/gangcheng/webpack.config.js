@@ -8,6 +8,7 @@ const WebpackBar = require('webpackbar')
 const Dotenv = require('dotenv-webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { VueLoaderPlugin  } = require('vue-loader')
 // const { ProvidePlugin } = require('webpack');
 // const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
@@ -79,6 +80,7 @@ const webpackBaseConfig = {
 		extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
 	},
 	plugins: [
+		new VueLoaderPlugin(),
 		// new NodePolyfillPlugin(),
 		new MiniCssExtractPlugin({
 			filename: _modeflag ? 'styles/[name].[contenthash:5].css' : 'styles/[name].css',

@@ -1,9 +1,16 @@
 import { defineComponent } from 'vue'
+import { useState, useInterval } from '@arctron-cim/hooks'
 
 const App = defineComponent({
 	setup() {
-		return () => <h1>港城</h1>
+		useInterval(() => setState((c: number) => ++c), 1000, true)
+		
+		const [state, setState] = useState<number>(0)
+		return { state }
 	},
+	render() {
+		return <h1>港城: {this.state}</h1>
+	}
 })
 
 export default App
