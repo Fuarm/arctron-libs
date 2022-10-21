@@ -13,13 +13,32 @@
   "files": [
     "lib"
   ],
+  "browser": [
+    "packages"
+  ],
   "publishConfig": {
     "registry": "http://127.0.0.1:4873"
   },
   "scripts": {
-    "build": "microbundle"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
-  "peerDependencies": {
+  "devDependencies": {
+    "@mdx-js/react": "^2.1.5",
+    "@mdx-js/vue": "^2.1.5",
+    "@storybook/addon-docs": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/manager-webpack5": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "@storybook/vue3": "^6.5.12",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "storybook": "^6.5.12"
+  },
+  "dependencies": {
     "vue": "^3.2.41"
   }
 }

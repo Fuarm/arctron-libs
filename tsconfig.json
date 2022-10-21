@@ -11,7 +11,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
-    "baseUrl": "packages"
+    "baseUrl": "packages",
+    "jsx": "react-jsx"
   },
   "include": ["packages/**/*.ts", "**/*.d.ts"],
   "ignore": ["node_modules", "!/packages/node_modules"],

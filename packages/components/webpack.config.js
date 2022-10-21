@@ -2,7 +2,7 @@ const { resolve } = require('path')
 const merge = require('webpack-merge')
 const argv = require('yargs-parser')(process.argv.slice(2))
 const _mode = argv.mode || 'development'
-const _mergeConfig = require(`./config/webpack.${_mode}.js`)
+const _mergeConfig = {}
 const _modeflag = _mode === 'production' ? true : false
 const WebpackBar = require('webpackbar')
 const Dotenv = require('dotenv-webpack')
@@ -14,7 +14,7 @@ const { VueLoaderPlugin  } = require('vue-loader')
 
 const webpackBaseConfig = {
 	entry: {
-		main: resolve('src/index.tsx'),
+		main: resolve('packages/index.ts'),
 	},
 	output: {
 		path: resolve(process.cwd(), 'dist'),
@@ -68,19 +68,13 @@ const webpackBaseConfig = {
 		},
 	},
 	resolve: {
+		alias: {
+			'@': resolve('src'),
+		},
 		extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
 	},
 	plugins: [
 		new VueLoaderPlugin(),
-		// new NodePolyfillPlugin(),
-		new MiniCssExtractPlugin({
-			filename: _modeflag ? 'styles/[name].[contenthash:5].css' : 'styles/[name].css',
-			chunkFilename: _modeflag ? 'styles/[name].[contenthash:5].css' : 'styles/[name].css',
-			ignoreOrder: false,
-		}),
-		// new ProvidePlugin({
-		//   Buffer: ['buffer', 'Buffer'],
-		// }),
 		new CleanWebpackPlugin(),
 		new WebpackBar({
 			name: "Arctron CIM 组件库",
