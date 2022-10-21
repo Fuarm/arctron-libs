@@ -1,0 +1,11 @@
+# 源代码
+lib
+
+# 测试代码
+__tests__
+
+# 配置
+config
+webpack.config.js
+postcss.config.js
+tailwind.config.js

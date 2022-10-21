@@ -68,9 +68,6 @@ const webpackBaseConfig = {
 		},
 	},
 	resolve: {
-		alias: {
-			'@': resolve('src'),
-		},
 		extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
 	},
 	plugins: [
@@ -86,7 +83,7 @@ const webpackBaseConfig = {
 		// }),
 		new CleanWebpackPlugin(),
 		new WebpackBar({
-			name: "港城 CIM",
+			name: "Arctron CIM 组件库",
 			color: '#2dc9d1'
 		}),
 		new Dotenv(),
