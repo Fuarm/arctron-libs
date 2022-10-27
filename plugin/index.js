@@ -1,7 +1,7 @@
-import plugin from 'tailwindcss/plugin'
-import viStylesComponents from './vi-styles'
+const plugin = require('tailwindcss/plugin')
+const viStylesComponents = require('./vi-styles')
 
-export default plugin(
+module.exports = plugin(
   ({ addBase, addComponents, theme }) => {
     console.log(
       '🐮 arctron-custom-tailwind-plugin 启动成功！',

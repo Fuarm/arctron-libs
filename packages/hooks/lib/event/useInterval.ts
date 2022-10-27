@@ -8,11 +8,16 @@ import useEffect from "../core/useEffect"
  * @returns 
  */
 function useInterval(fn: () => void, wait: number = 300, immediate: boolean = false) {
-  let timer: number | undefined
+  let timer: string | number | NodeJS.Timeout | undefined
   
   const start = () => timer = setInterval(fn, wait)
   
-  const stop = () => timer && clearInterval(timer)
+  const stop = () => {
+    if (timer) {
+      clearInterval(timer)
+      timer = undefined
+    }
+  }
  
   useEffect(() => {
     // 直接执行
