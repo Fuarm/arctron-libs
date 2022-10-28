@@ -9,6 +9,8 @@ node_modules
 # dist 打包文件
 dist
 build
+temp
+lib
 
 # jest 单测包
 coverage

@@ -1,29 +1,33 @@
 {
-  "name": "@arctron-cim/hooks",
+  "name": "@arctron-cim/hooks-vue3",
   "version": "0.0.1",
   "description": "> TODO: description",
   "author": "苟富军 <750108747@qq.com>",
   "homepage": "",
   "license": "ISC",
+  "typings": "lib/hooks.d.ts",
   "type": "module",
-  "source": "lib/index.ts",
-  "main": "build/hooks.js",
-  "types": "index.d.ts",
   "exports": {
-    "require": "./build/hooks.js",
-    "default": "./build/hooks.esm.js"
+    "require": "./lib/index.js",
+    "default": "./lib/index.esm.js"
   },
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "lib",
+    "README.md",
+    "package.json"
   ],
   "publishConfig": {
     "registry": "http://127.0.0.1:4873"
   },
   "scripts": {
-    "build": "microbundle"
+    "build": "gulp build",
+    "changelog": "gulp changelog"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.18.6"
   }
 }

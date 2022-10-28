@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue'
-import { useState, useInterval } from '@arctron-cim/hooks'
+import { useState, useInterval } from '@arctron-cim/hooks-vue3'
 
 const App = defineComponent({
 	setup() {

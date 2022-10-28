@@ -1,5 +1,5 @@
 {
-  "name": "gangcheng",
+  "name": "gangcheng-vue3",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -12,6 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@arctron-cim/hooks": "workspace:^0.0.1"
+    "@arctron-cim/hooks-vue3": "workspace:^0.0.1"
   }
 }

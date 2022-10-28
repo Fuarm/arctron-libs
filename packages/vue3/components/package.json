@@ -1,5 +1,5 @@
 {
-  "name": "@arctron-cim/components",
+  "name": "@arctron-cim/components-vue3",
   "version": "0.0.1",
   "description": "组件库",
   "author": "苟富军 <750108747@qq.com>",
@@ -23,7 +23,7 @@
   },
   "devDependencies": {
   },
-  "dependencies": {
+  "peerDependencies": {
     "vue": "^3.2.41"
   }
 }

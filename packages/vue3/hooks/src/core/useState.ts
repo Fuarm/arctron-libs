@@ -1,7 +1,8 @@
 import { ref, UnwrapRef } from 'vue'
 /**
- * state
- * @param {*} state
+ * useState
+ * @param state - T
+ * @returns 
  */
 function useState<T>(state: T) {
 	const newState = ref<T>(state)

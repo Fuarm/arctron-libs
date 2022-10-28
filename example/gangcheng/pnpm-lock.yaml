@@ -1,7 +1,0 @@
-lockfileVersion: 5.4
-
-specifiers:
-  '@arctron-cim/hooks': workspace:^0.0.1
-
-dependencies:
-  '@arctron-cim/hooks': link:../../packages/hooks
