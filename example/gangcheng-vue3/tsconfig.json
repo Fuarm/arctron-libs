@@ -3,6 +3,7 @@
     "incremental": true,
     "target": "es5",
     "lib": ["dom", "esnext"],
+    "removeComments": false,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,17 +19,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/web/components"],
-      "@constants/*": ["src/web/constants"],
-      "@hooks/*": ["src/web/hooks"],
-      "@layouts/*": ["src/web/layouts"],
-      "@pages/*": ["src/web/pages"],
-      "@store/*": ["src/web/store"],
-      "@utils/*": ["src/web/utils"],
+      "@/*": ["src"]
     }
   },
-  "include": ["./src"]
+  "include": ["src" ],
+  "exclude": ["node_modules"]
 }

@@ -11,6 +11,8 @@
     "removeComments": false,
     "declaration": true,
     "sourceMap": false,
+    
+		"jsx": "preserve",
 
     /* 强类型检查配置 */
     "strict": true,
@@ -21,8 +23,7 @@
     "outDir": "lib",
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "jsx": "preserve"
+    "resolveJsonModule": true
   },
   "include": ["packages", "src"],
   "exclude": ["lib", "node_modules"]

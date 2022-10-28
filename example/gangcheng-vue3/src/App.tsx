@@ -12,8 +12,8 @@ const App = defineComponent({
 	},
 	render() {
 		return <>
-			<h1 className='text-amber-600'>港城: {this.state}</h1>
-			<ArcButton>测试：{this.state + 1}</ArcButton>
+			<h1 className='text-amber-600'>港城: {this.state} </h1>
+			<ArcButton className='text-amber-800'>港城: {this.state + 2} </ArcButton>
 		</>
 	}
 })
