@@ -2,6 +2,7 @@
 import path from 'path'
 // import { RollupOptions } from 'rollup'
 import typescript from '@rollup/plugin-typescript'
+import vueJsx from 'rollup-plugin-vue-jsx-compat'
 import { swc, minify, defineRollupSwcOption } from 'rollup-plugin-swc3';
 
 import pkg from './package.json' assert { type: 'json' };
@@ -36,7 +37,7 @@ const rollupConfig = {
   plugins: [
 
     // ts 的功能只在于编译出声明文件，所以 target 为 ESNext，编译交给 babel 来做
-    // typescript(),
+    typescript(),
 
     vueJsx(),
 

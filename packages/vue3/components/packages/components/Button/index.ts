@@ -1,3 +1,4 @@
+import type { Plugin } from "vue";
 import { withInstall } from '../../utils'
 
 import Button from './Button'
