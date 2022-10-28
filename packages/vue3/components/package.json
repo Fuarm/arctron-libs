@@ -5,7 +5,12 @@
   "author": "苟富军 <750108747@qq.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/index.ts",
+  "typings": "lib/index.d.ts",
+  "type": "module",
+  "exports": {
+    "require": "./lib/index.js",
+    "default": "./lib/index.esm.js"
+  },
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -20,10 +25,11 @@
     "registry": "http://127.0.0.1:4873"
   },
   "scripts": {
-  },
-  "devDependencies": {
+    "build": "gulp build",
+    "changelog": "gulp changelog"
   },
   "peerDependencies": {
-    "vue": "^3.2.41"
+    "vue": "^3.2.41",
+    "vue-jsx-runtime": "^0.1.0"
   }
 }

@@ -34,7 +34,6 @@ module.exports = {
 			title: '港城 CIM 面板',
 			filename: 'index.html',
 			template: resolve(__dirname, '../public/index.html'),
-		}),
-		new MiniCssExtractPlugin(),
+		})
 	],
 }

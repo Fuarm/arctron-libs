@@ -77,7 +77,7 @@ const apiExtractorGenerate = async cb => {
     let intervalTimes = 5
     let exitFlag = false
     const timer = setInterval(async () => {
-      exitFlag = await fse.pathExists('./lib/index.d.ts')
+      exitFlag = await fse.pathExists('./lib/src/index.d.ts')
       intervalTimes--
       if (exitFlag || intervalTimes === 0) {
         clearInterval(timer)

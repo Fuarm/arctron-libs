@@ -21,8 +21,9 @@
     "outDir": "lib",
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "jsx": "react-jsx"
   },
-  "include": ["./src"],
+  "include": ["packages", "src"],
   "exclude": ["lib", "node_modules"]
 }

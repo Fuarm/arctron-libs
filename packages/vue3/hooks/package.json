@@ -5,7 +5,7 @@
   "author": "苟富军 <750108747@qq.com>",
   "homepage": "",
   "license": "ISC",
-  "typings": "lib/hooks.d.ts",
+  "typings": "lib/index.d.ts",
   "type": "module",
   "exports": {
     "require": "./lib/index.js",
@@ -26,8 +26,5 @@
   "scripts": {
     "build": "gulp build",
     "changelog": "gulp changelog"
-  },
-  "devDependencies": {
-    "@babel/preset-typescript": "^7.18.6"
   }
 }

@@ -76,11 +76,12 @@ const webpackBaseConfig = {
 	plugins: [
 		new VueLoaderPlugin(),
 		// new NodePolyfillPlugin(),
-		new MiniCssExtractPlugin({
-			filename: _modeflag ? 'styles/[name].[contenthash:5].css' : 'styles/[name].css',
-			chunkFilename: _modeflag ? 'styles/[name].[contenthash:5].css' : 'styles/[name].css',
-			ignoreOrder: false,
-		}),
+		// new MiniCssExtractPlugin({
+		// 	filename: _modeflag ? 'styles/[name].[contenthash:5].css' : 'styles/[name].css',
+		// 	chunkFilename: _modeflag ? 'styles/[name].[contenthash:5].css' : 'styles/[name].css',
+		// 	ignoreOrder: false,
+		// }),
+		new MiniCssExtractPlugin({ignoreOrder: false}),
 		// new ProvidePlugin({
 		//   Buffer: ['buffer', 'Buffer'],
 		// }),

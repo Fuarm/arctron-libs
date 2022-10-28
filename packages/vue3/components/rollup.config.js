@@ -2,12 +2,12 @@
 import path from 'path'
 // import { RollupOptions } from 'rollup'
 import typescript from '@rollup/plugin-typescript'
-import { swc, minify } from 'rollup-plugin-swc3';
+import { swc, minify, defineRollupSwcOption } from 'rollup-plugin-swc3';
 
 import pkg from './package.json' assert { type: 'json' };
 
 const paths = {
-  input: path.join('./src/index.ts'),
+  input: path.join('./packages/arctron/index.ts'),
   output: path.join('./lib'),
 }
 
@@ -34,10 +34,21 @@ const rollupConfig = {
   ], // 指出应将哪些模块视为外部模块，如 Peer dependencies 中的依赖
   // plugins 需要注意引用顺序
   plugins: [
-    // ts 的功能只在于编译出声明文件，所以 target 为 ESNext，编译交给 babel 来做
-    typescript(),
 
-    swc(),
+    // ts 的功能只在于编译出声明文件，所以 target 为 ESNext，编译交给 babel 来做
+    // typescript(),
+
+    vueJsx(),
+
+    swc(defineRollupSwcOption({
+      jsc: {
+        transform: {
+          react: {
+            pragma: 'vueJsxCompat'
+          }
+        }
+      }
+    })),
 
     minify()
   ],
