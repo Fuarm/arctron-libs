@@ -4,8 +4,10 @@ import path from 'path'
 import typescript from '@rollup/plugin-typescript'
 import vueJsx from 'rollup-plugin-vue-jsx-compat'
 import { swc, minify, defineRollupSwcOption } from 'rollup-plugin-swc3';
+import postcss from 'rollup-plugin-postcss'
+import postcssConfig from './postcss.config.js'
 
-import pkg from './package.json' assert { type: 'json' };
+import pkg from '../package.json' assert { type: 'json' };
 
 const paths = {
   input: path.join('./packages/arctron/index.ts'),
@@ -50,6 +52,8 @@ const rollupConfig = {
         }
       }
     })),
+
+    postcss(postcssConfig),
 
     minify()
   ],

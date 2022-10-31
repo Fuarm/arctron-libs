@@ -1,3 +1,6 @@
+@import '@arctron-cim/components-vue3/lib/index.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+

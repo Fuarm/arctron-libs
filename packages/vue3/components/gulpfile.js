@@ -8,7 +8,7 @@ import {
   ExtractorConfig,
 } from '@microsoft/api-extractor'
 import conventionalChangelog from 'conventional-changelog'
-import rollupConfig from './rollup.config.js'
+import rollupConfig from './config/rollup.config.js'
 const { series } = gulp;
 
 
@@ -105,7 +105,7 @@ const apiExtractorGenerate = async cb => {
     // 删除多余的 .d.ts 文件
     const libFiles = await fse.readdir(paths.lib)
     libFiles.forEach(async file => {
-      if (!file.includes('index.d.ts') && !file.endsWith('.js')) {
+      if (!file.includes('index.d.ts') && !file.endsWith('.js') && !file.endsWith('.css')) {
         await fse.remove(path.join(paths.lib, file))
       }
     })

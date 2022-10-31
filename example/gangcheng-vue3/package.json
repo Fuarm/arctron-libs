@@ -2,15 +2,14 @@
   "name": "gangcheng-vue3",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "scripts": {
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production",
     "test": ""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@arctron-cim/components-vue3": "workspace:^0.0.1",
     "@arctron-cim/hooks-vue3": "workspace:^0.0.1"

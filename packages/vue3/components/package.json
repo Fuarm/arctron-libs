@@ -5,11 +5,14 @@
   "author": "苟富军 <750108747@qq.com>",
   "homepage": "",
   "license": "ISC",
-  "typings": "lib/index.d.ts",
   "type": "module",
+  "typings": "lib/index.d.ts",
   "exports": {
-    "require": "./lib/index.js",
-    "default": "./lib/index.esm.js"
+    "./lib/*": "./lib/*",
+    ".": {
+      "require": "./lib/index.js",
+      "default": "./lib/index.esm.js"
+    }
   },
   "directories": {
     "lib": "lib",
