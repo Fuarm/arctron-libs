@@ -1,7 +1,7 @@
-import { Component, defineComponent } from 'vue'
+import { defineComponent } from 'vue'
 import './index.less'
 
-type BaseBoxProps = {
+export type BaseBoxProps = {
   /**
    * Box 宽，默认单位px，默认单位仅支持 number
    */
@@ -28,20 +28,40 @@ type BaseBoxProps = {
   radius?: number | boolean
 }
 
-const BaseBox = defineComponent({
-	name: 'ArcBaseBox',
-  props: {
-    width: String,
-    height: String,
-    bgColor: String,
-    bgImage: String,
-    blur: Number,
-    radius: Number
-  },
-  setup(props: BaseBoxProps) {
-    const { width = '100%', height = '100%', bgColor, bgImage, blur, radius } = props
+// const BaseBox = defineComponent<BaseBoxProps, any>({
+// 	name: 'ArcBaseBox',
+//   setup(_, { attrs }) {
+//     const { width = '100%', height = '100%', bgColor, bgImage, blur, radius } = attrs
 
-    console.log(props, bgColor, bgImage, blur, radius)
+//     // 背景高斯模糊处理
+//     const blurResult = blur === true ? 'backdrop-blur' : typeof blur === 'number' ? `backdrop-blur-[${blur}px]` : ''
+
+//     // 圆角处理
+//     const radioResult = radius === true ? 'rounded' : typeof blur === 'number' ? `rounded-[${blur}px]` : ''
+
+//     // 背景图片，背景颜色处理，生成 style 变量
+//     const style = {
+//       width,
+//       height,
+//       '--arc-base-box-bg-color': bgColor,
+//       '--arc-base-box-bg-image': bgImage && `url(${bgImage})`
+//     }
+
+//     return {
+//       style: {...style},
+//       blur: blurResult,
+//       radius: radioResult
+//     }
+//   },
+// 	render() {
+// 		return <div class={`arc-base-box ${this.blur} ${this.radius}`} style={this.style}>{ this.$slots.default?.() }</div>
+// 	}
+// })
+
+// export default BaseBox
+
+function BaseBox(props: BaseBoxProps, { attrs, slots }) {
+  const { width = '100%', height = '100%', bgColor, bgImage, blur, radius } = attrs
 
     // 背景高斯模糊处理
     const blurResult = blur === true ? 'backdrop-blur' : typeof blur === 'number' ? `backdrop-blur-[${blur}px]` : ''
@@ -57,15 +77,9 @@ const BaseBox = defineComponent({
       '--arc-base-box-bg-image': bgImage && `url(${bgImage})`
     }
 
-    return {
-      style: {...style},
-      blur: blurResult,
-      radius: radioResult
-    }
-  },
-	render() {
-		return <div class={`arc-base-box ${this.blur} ${this.radius}`} style={this.style}>{ this.$slots.default?.() }</div>
-	}
-})
+  return () => <div class={`arc-base-box ${blurResult} ${radioResult}`} style={{...style}}>{ slots.default?.() }</div>
+}
 
-export default BaseBox
+BaseBox.props = ['width', 'height', 'bgColor', 'bgImage', 'blur', 'radius']
+
+export default defineComponent(BaseBox)

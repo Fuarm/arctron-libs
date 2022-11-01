@@ -26,5 +26,8 @@
   "scripts": {
     "build": "gulp build",
     "changelog": "gulp changelog"
+  },
+  "peerDependencies": {
+    "echarts": "^5.4.0"
   }
 }

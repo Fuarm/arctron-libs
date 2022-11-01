@@ -1,6 +1,8 @@
 import { Plugin } from "vue";
-import ArcButton from "../components/Button";
+import { ArcBaseBox, ArcBaseLayout, ArcECharts } from "../components";
 
 export default [
-  ArcButton
+  ArcBaseBox,
+  ArcBaseLayout,
+  ArcECharts
 ] as Plugin[]

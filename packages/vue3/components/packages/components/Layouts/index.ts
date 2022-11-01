@@ -1,7 +1,10 @@
 import type { Plugin } from "vue";
 import { withInstall } from '../../utils'
 
-import BaseBox from './BaseBox'
+import BaseBox, { BaseBoxProps } from './BaseBox'
+import BaseLayout, { BaseLayoutProps } from './BaseLayout'
 
-export const ArcBaseBox = withInstall(BaseBox)
-export default ArcBaseBox
+const ArcBaseBox = withInstall(BaseBox)
+const ArcBaseLayout = withInstall(BaseLayout)
+
+export { ArcBaseBox, ArcBaseLayout, BaseBoxProps, BaseLayoutProps }

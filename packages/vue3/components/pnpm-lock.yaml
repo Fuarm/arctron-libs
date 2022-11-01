@@ -1,10 +1,14 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@arctron-cim/hooks-vue3': workspace:^0.0.1
+  echarts: ^5.4.0
   vue: ^3.2.41
   vue-jsx-runtime: ^0.1.0
 
 dependencies:
+  '@arctron-cim/hooks-vue3': link:../hooks
+  echarts: 5.4.0
   vue: 3.2.41
   vue-jsx-runtime: 0.1.0_vue@3.2.41
 
@@ -124,6 +128,13 @@ packages:
     resolution: {integrity: sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==}
     dev: false
 
+  /echarts/5.4.0:
+    resolution: {integrity: sha512-uPsO9VRUIKAdFOoH3B0aNg7NRVdN7aM39/OjovjO9MwmWsAkfGyeXJhK+dbRi51iDrQWliXV60/XwLA7kg3z0w==}
+    dependencies:
+      tslib: 2.3.0
+      zrender: 5.4.0
+    dev: false
+
   /estree-walker/2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
     dev: false
@@ -172,6 +183,10 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
+  /tslib/2.3.0:
+    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
+    dev: false
+
   /vue-jsx-runtime/0.1.0_vue@3.2.41:
     resolution: {integrity: sha512-gISr2PorSYKoiUk1Y0E20BrRC1rAiVTQNKLZZYigKFY0HEC9VpUq7nrI7wgXe1DzhsjyWNIpcuvLsiHTi5yBXw==}
     peerDependencies:
@@ -188,4 +203,10 @@ packages:
       '@vue/runtime-dom': 3.2.41
       '@vue/server-renderer': 3.2.41_vue@3.2.41
       '@vue/shared': 3.2.41
+    dev: false
+
+  /zrender/5.4.0:
+    resolution: {integrity: sha512-rOS09Z2HSVGFs2dn/TuYk5BlCaZcVe8UDLLjj1ySYF828LATKKdxuakSZMvrDz54yiKPDYVfjdKqcX8Jky3BIA==}
+    dependencies:
+      tslib: 2.3.0
     dev: false
