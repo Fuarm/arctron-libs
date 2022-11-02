@@ -5,7 +5,7 @@
   "main": "index.ts",
   "license": "MIT",
   "workspaces": [
-    "packages/**"
+    "packages/*"
   ],
   "scripts": {
     "build": "lerna run build",
@@ -31,15 +31,15 @@
     "@swc/core": "^1.3.11",
     "@tailwindcss/typography": "^0.5.7",
     "@testing-library/vue": "^6.6.1",
+    "@theme-ui/core": "^0.15.3",
     "@tsconfig/recommended": "^1.0.1",
     "@types/fs-extra": "^9.0.13",
     "@types/gulp": "^4.0.9",
     "@types/jest": "^29.1.2",
     "@types/node": "^18.11.7",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
+    "@vue/babel-plugin-jsx": "^1.1.1",
     "@vue/compiler-sfc": "^3.2.41",
     "autoprefixer": "^10.4.12",
     "chalk": "^5.1.2",
@@ -59,8 +59,6 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.30.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unicorn": "^43.0.2",
     "eslint-plugin-vue": "^9.6.0",
     "figlet": "^1.5.2",
@@ -91,6 +89,7 @@
     "ts-node": "^10.9.1",
     "tslib": "^2.4.0",
     "typescript": "^4.8.4",
+    "vue": "^3.2.41",
     "vue-jsx-runtime": "^0.1.0",
     "vue-loader": "^17.0.0",
     "webpack": "^5.74.0",
@@ -101,9 +100,7 @@
     "webpackbar": "^5.0.2",
     "yargs-parser": "^21.1.1"
   },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "vue": "^3.2.41"
+  "dependencies": {
+    "echarts": "^5.4.0"
   }
 }

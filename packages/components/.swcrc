@@ -18,7 +18,7 @@
         "runtime": "automatic",
         "throwIfNamespace": true,
         "useBuiltins": true,
-        "importSource": "vue-jsx-runtime"
+        "pragma": "vueJsxCompat"
       }
     },
     "target": "es5",

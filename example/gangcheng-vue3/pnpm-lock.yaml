@@ -5,5 +5,5 @@ specifiers:
   '@arctron-cim/hooks-vue3': workspace:^0.0.1
 
 dependencies:
-  '@arctron-cim/components-vue3': link:../../packages/vue3/components
-  '@arctron-cim/hooks-vue3': link:../../packages/vue3/hooks
+  '@arctron-cim/components-vue3': link:../../packages/components
+  '@arctron-cim/hooks-vue3': link:../../packages/hooks

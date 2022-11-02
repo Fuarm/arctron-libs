@@ -5,17 +5,19 @@ import { ArcBaseBox, ArcBaseLayout, ArcECharts } from '@arctron-cim/components-v
 
 const App = defineComponent({
 	setup() {
-		useInterval(() => setState((c: number) => ++c), 1000, true)
-		
+		const [echartsRef] = useState(null)
 		const [state, setState] = useState<number>(0)
-		return { state }
+
+		useInterval(() => setState((c: number) => ++c), 1000, true)
+
+		return { state, echartsRef }
 	},
 	render() {
 		return (
 			<ArcBaseLayout width='300px' height='100vh' layout='right'>
-				<h1 className='text-amber-600'>港城: {this.state} </h1>
-				<ArcBaseBox width='120px' height='120px' radius bgColor={'blue'}>
-					<ArcECharts />
+				<h1 className={'text-amber-700'}>港城: {this.state} </h1>
+				<ArcBaseBox width='120px' height='120px' radius bgColor={'#323232'}>
+					<ArcECharts ref={'echartsRef'} />
 				</ArcBaseBox>
 			</ArcBaseLayout>
 		)

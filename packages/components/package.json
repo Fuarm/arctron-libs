@@ -31,10 +31,10 @@
     "build": "gulp build",
     "changelog": "gulp changelog"
   },
+  "dependencies": {
+    "@arctron-cim/hooks-vue3": "workspace:^0.0.1"
+  },
   "peerDependencies": {
-    "@arctron-cim/hooks-vue3": "workspace:^0.0.1",
-    "echarts": "^5.4.0",
-    "vue": "^3.2.41",
-    "vue-jsx-runtime": "^0.1.0"
+    "@arctron-cim/hooks-vue3": "workspace:^0.0.1"
   }
 }

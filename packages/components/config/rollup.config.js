@@ -43,15 +43,7 @@ const rollupConfig = {
 
     vueJsx(),
 
-    swc(defineRollupSwcOption({
-      jsc: {
-        transform: {
-          react: {
-            pragma: 'vueJsxCompat'
-          }
-        }
-      }
-    })),
+    swc(),
 
     postcss(postcssConfig),
 

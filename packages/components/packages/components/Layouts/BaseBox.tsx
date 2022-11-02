@@ -47,10 +47,7 @@ function BaseBox(props: BaseBoxProps, { slots }) {
     '--arc-base-box-radius':  typeof radius === 'number' ? `${radius}px` : undefined
   }
 
-  return () => <>
-  <div>test</div>
-    <div class={['arc-base-box', blurResult, radiusResult]} style={{...style}}>{ slots.default?.() }</div>
-  </>
+  return () => <div class={['arc-base-box', blurResult, radiusResult]} style={{...style}}>{ slots.default?.() }</div>
 }
 
 const BaseBoxComp = defineComponent(BaseBox)
