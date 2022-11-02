@@ -28,7 +28,7 @@ function useECharts<O extends {}, E extends HTMLElement>(querySelect: string | R
     return () => setChartInstance(_chartInstance?.dispose() || null);
   }, [...deps])
 
-  return chartInstance.value as ECharts | null
+  return chartInstance as Ref<ECharts>
 }
 
 export default useECharts

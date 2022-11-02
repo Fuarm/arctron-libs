@@ -31,13 +31,10 @@ const ECharts = defineComponent({
 
     const [optionRef] = useState<EChartsOption>(option)
 
-    const echartInstance = useECharts(chartRef, option, [chartRef, optionRef])
+    const echartInstance = useECharts(chartRef, option, [optionRef])
 
     // 生成 style 变量
-    const style = {
-      width,
-      height
-    }
+    const style = { width, height }
 
     return {
       chartRef,

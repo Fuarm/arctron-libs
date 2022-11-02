@@ -28,58 +28,34 @@ export type BaseBoxProps = {
   radius?: number | boolean
 }
 
-// const BaseBox = defineComponent<BaseBoxProps, any>({
-// 	name: 'ArcBaseBox',
-//   setup(_, { attrs }) {
-//     const { width = '100%', height = '100%', bgColor, bgImage, blur, radius } = attrs
+function BaseBox(props: BaseBoxProps, { slots }) {
+  const { width = '100%', height = '100%', bgColor, bgImage, blur, radius } = props
 
-//     // 背景高斯模糊处理
-//     const blurResult = blur === true ? 'backdrop-blur' : typeof blur === 'number' ? `backdrop-blur-[${blur}px]` : ''
+  // 背景高斯模糊处理
+  const blurResult = blur === true ? 'backdrop-blur' : typeof blur === 'number' ? `backdrop-blur-[var(--arc-base-box-backdrop-blur)]` : ''
 
-//     // 圆角处理
-//     const radioResult = radius === true ? 'rounded' : typeof blur === 'number' ? `rounded-[${blur}px]` : ''
+  // 圆角处理
+  const radiusResult = radius === true ? 'rounded' : typeof radius === 'number' ? `rounded-[var(--arc-base-box-radius)]` : ''
 
-//     // 背景图片，背景颜色处理，生成 style 变量
-//     const style = {
-//       width,
-//       height,
-//       '--arc-base-box-bg-color': bgColor,
-//       '--arc-base-box-bg-image': bgImage && `url(${bgImage})`
-//     }
+  // 背景图片，背景颜色处理，生成 style 变量
+  const style = {
+    width,
+    height,
+    '--arc-base-box-bg-color': bgColor,
+    '--arc-base-box-bg-image': bgImage && `url(${bgImage})`,
+    '--arc-base-box-backdrop-blur': typeof blur === 'number' ? `${blur}px` : undefined,
+    '--arc-base-box-radius':  typeof radius === 'number' ? `${radius}px` : undefined
+  }
 
-//     return {
-//       style: {...style},
-//       blur: blurResult,
-//       radius: radioResult
-//     }
-//   },
-// 	render() {
-// 		return <div class={`arc-base-box ${this.blur} ${this.radius}`} style={this.style}>{ this.$slots.default?.() }</div>
-// 	}
-// })
-
-// export default BaseBox
-
-function BaseBox(props: BaseBoxProps, { attrs, slots }) {
-  const { width = '100%', height = '100%', bgColor, bgImage, blur, radius } = attrs
-
-    // 背景高斯模糊处理
-    const blurResult = blur === true ? 'backdrop-blur' : typeof blur === 'number' ? `backdrop-blur-[${blur}px]` : ''
-
-    // 圆角处理
-    const radioResult = radius === true ? 'rounded' : typeof blur === 'number' ? `rounded-[${blur}px]` : ''
-
-    // 背景图片，背景颜色处理，生成 style 变量
-    const style = {
-      width,
-      height,
-      '--arc-base-box-bg-color': bgColor,
-      '--arc-base-box-bg-image': bgImage && `url(${bgImage})`
-    }
-
-  return () => <div class={`arc-base-box ${blurResult} ${radioResult}`} style={{...style}}>{ slots.default?.() }</div>
+  return () => <>
+  <div>test</div>
+    <div class={['arc-base-box', blurResult, radiusResult]} style={{...style}}>{ slots.default?.() }</div>
+  </>
 }
 
-BaseBox.props = ['width', 'height', 'bgColor', 'bgImage', 'blur', 'radius']
+const BaseBoxComp = defineComponent(BaseBox)
 
-export default defineComponent(BaseBox)
+BaseBoxComp.name  = 'ArcBaseBox'
+BaseBoxComp.props = ['width', 'height', 'bgColor', 'bgImage', 'blur', 'radius']
+
+export default BaseBoxComp

@@ -28,34 +28,30 @@ export type BaseLayoutProps = {
   layout?: 'left' | 'right'
 }
 
-const Baselayout = defineComponent<BaseLayoutProps, any>({
-	name: 'ArcBaselayout',
-  setup(_, { attrs }) {
-    const { width = '100%', height = '100%', bgColor, bgImage, blur, layout = 'left' } = attrs
+function Baselayout(props: BaseLayoutProps, { slots }) {
+  const { width = '100%', height = '100%', bgColor, bgImage, blur, layout = 'left' } = props
 
-    // 背景高斯模糊处理
-    const blurResult = blur === true ? 'backdrop-blur' : typeof blur === 'number' ? `backdrop-blur-[${blur}px]` : ''
+  // 背景高斯模糊处理
+  const blurResult = blur === true ? 'backdrop-blur' : ''
 
-    // 左右布局处理
-    const layoutResult = layout === 'left' ? 'items-start' : 'items-end'
+  // 左右布局处理
+  const layoutResult = layout === 'left' ? 'items-start' : 'items-end'
 
-    // 背景图片，背景颜色处理，生成 style 变量
-    const style = {
-      width,
-      height,
-      '--arc-base-box-bg-color': bgColor,
-      '--arc-base-box-bg-image': bgImage && `url(${bgImage})`
-    }
+  // 背景图片，背景颜色处理，生成 style 变量
+  const style = {
+    width,
+    height,
+    backdropFilter: typeof blur === 'number' ? `blur(${blur}px)` : undefined,
+    '--arc-base-box-bg-color': bgColor,
+    '--arc-base-box-bg-image': bgImage && `url(${bgImage})`
+  }
 
-    return {
-      style: {...style},
-      blur: blurResult,
-      layout: layoutResult
-    }
-  },
-	render() {
-		return <div class={`arc-base-layout flex flex-col ${this.layout} ${this.blur}`} style={this.style}>{ this.$slots.default?.() }</div>
-	}
-})
+  return () => <div class={['arc-base-layout flex flex-col', layoutResult, blurResult]} style={style}>{ slots.default?.() }</div>
+}
 
-export default Baselayout
+const BaselayoutComp = defineComponent(Baselayout)
+
+BaselayoutComp.name  = 'ArcBaselayout'
+BaselayoutComp.props = ['width', 'height', 'bgColor', 'bgImage', 'blur', 'layout']
+
+export default BaselayoutComp
