@@ -14,7 +14,7 @@
     "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
     "baseUrl": "packages"
   },
-  "include": ["packages/**/*.ts", "**/*.d.ts", "packages/logs/gulpfile.js"],
+  "include": ["packages/**/*.ts", "**/*.d.ts"],
   "ignore": ["node_modules", "!/packages/node_modules"],
   "paths": {}
 }

@@ -1,4 +1,5 @@
 import { defineComponent } from 'vue'
+import { Tuple } from '../../types'
 import './index.less'
 
 export type BaseBoxProps = {
@@ -25,11 +26,15 @@ export type BaseBoxProps = {
   /**
    * Box 圆角，默认单位px， 默认圆角 4px
    */
-  radius?: number | boolean
+  radius?: number | boolean,
+  /**
+   * 边距：设置容器内边距
+   */
+  padding?: Tuple<number, 2 | 3 | 4>
 }
 
 function BaseBox(props: BaseBoxProps, { slots }) {
-  const { width = '100%', height = '100%', bgColor, bgImage, blur, radius } = props
+  const { width = '100%', height = '100%', bgColor, bgImage, blur, radius, padding } = props
 
   // 背景高斯模糊处理
   const blurResult = blur === true ? 'backdrop-blur' : typeof blur === 'number' ? `backdrop-blur-[var(--arc-base-box-backdrop-blur)]` : ''
@@ -41,6 +46,7 @@ function BaseBox(props: BaseBoxProps, { slots }) {
   const style = {
     width,
     height,
+    padding: padding?.map(item => item + 'px').join(' '),
     '--arc-base-box-bg-color': bgColor,
     '--arc-base-box-bg-image': bgImage && `url(${bgImage})`,
     '--arc-base-box-backdrop-blur': typeof blur === 'number' ? `${blur}px` : undefined,
@@ -53,6 +59,6 @@ function BaseBox(props: BaseBoxProps, { slots }) {
 const BaseBoxComp = defineComponent(BaseBox)
 
 BaseBoxComp.name  = 'ArcBaseBox'
-BaseBoxComp.props = ['width', 'height', 'bgColor', 'bgImage', 'blur', 'radius']
+BaseBoxComp.props = ['width', 'height', 'bgColor', 'bgImage', 'blur', 'radius', 'padding']
 
 export default BaseBoxComp

@@ -1,4 +1,5 @@
 import { defineComponent } from 'vue'
+import type { Tuple } from '../../types'
 import './index.less'
 
 export type BaseLayoutProps = {
@@ -25,11 +26,15 @@ export type BaseLayoutProps = {
   /**
    * 布局：左右布局
    */
-  layout?: 'left' | 'right'
+  layout?: 'left' | 'right',
+  /**
+   * 边距：设置容器内边距
+   */
+  padding?: Tuple<number, 2 | 3 | 4>
 }
 
 function Baselayout(props: BaseLayoutProps, { slots }) {
-  const { width = '100%', height = '100%', bgColor, bgImage, blur, layout = 'left' } = props
+  const { width = '100%', height = '100%', bgColor, bgImage, blur, layout = 'left', padding } = props
 
   // 背景高斯模糊处理
   const blurResult = blur === true ? 'backdrop-blur' : ''
@@ -42,6 +47,7 @@ function Baselayout(props: BaseLayoutProps, { slots }) {
     width,
     height,
     backdropFilter: typeof blur === 'number' ? `blur(${blur}px)` : undefined,
+    padding: padding?.map(item => item + 'px').join(' '),
     '--arc-base-box-bg-color': bgColor,
     '--arc-base-box-bg-image': bgImage && `url(${bgImage})`
   }
@@ -52,6 +58,6 @@ function Baselayout(props: BaseLayoutProps, { slots }) {
 const BaselayoutComp = defineComponent(Baselayout)
 
 BaselayoutComp.name  = 'ArcBaselayout'
-BaselayoutComp.props = ['width', 'height', 'bgColor', 'bgImage', 'blur', 'layout']
+BaselayoutComp.props = ['width', 'height', 'bgColor', 'bgImage', 'blur', 'layout', 'padding']
 
 export default BaselayoutComp

@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.json",
+  "jsx": "preserve",
+  "types": ["jest", "node"],
+  "include": ["packages/**/__tests__"],
+}

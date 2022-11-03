@@ -15,9 +15,9 @@ const App = defineComponent({
 	},
 	render() {
 		return (
-			<ArcBaseLayout width='300px' height='100vh' layout='right'>
+			<ArcBaseLayout width='300px' height='100vh' layout='right' padding={[12, 24]}>
 				<Count />
-				<ArcBaseBox width='120px' height='120px' radius bgColor={'#f55555'}>
+				<ArcBaseBox width='120px' height='120px' radius bgColor={'#f55555'} bgImage={'https://i.scdn.co/image/ab6761610000e5eb006ff3c0136a71bfb9928d34'}>
 					<ArcECharts ref={'echartsRef'} />
 				</ArcBaseBox>
 			</ArcBaseLayout>
