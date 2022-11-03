@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@arctron-cim/components-vue3": "workspace:^0.0.1",
-    "@arctron-cim/hooks-vue3": "workspace:^0.0.1"
+    "@arctron-cim/hooks-vue3": "workspace:^0.0.1",
+    "@arctron-cim/logs": "workspace:^0.0.1"
   }
 }

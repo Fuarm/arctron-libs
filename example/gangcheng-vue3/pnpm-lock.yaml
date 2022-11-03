@@ -3,7 +3,9 @@ lockfileVersion: 5.4
 specifiers:
   '@arctron-cim/components-vue3': workspace:^0.0.1
   '@arctron-cim/hooks-vue3': workspace:^0.0.1
+  '@arctron-cim/logs': workspace:^0.0.1
 
 dependencies:
   '@arctron-cim/components-vue3': link:../../packages/components
   '@arctron-cim/hooks-vue3': link:../../packages/hooks
+  '@arctron-cim/logs': link:../../packages/logs
