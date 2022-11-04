@@ -1,6 +1,6 @@
 {
 	"verbose": true,
-	"testEnvironment": "node",
+	"testEnvironment": "jsdom",
 	"collectCoverage": true,
 	"testPathIgnorePatterns": ["/node_modules/"],
 	"coverageReporters": ["lcov", "json"],
@@ -15,5 +15,8 @@
 	},
 	"testRegex": "(/(tests|__tests__)/.*|(\\./)(test|spec))\\.(jsx?|tsx?)$",
 	"moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
-	"setupFilesAfterEnv": []
+	"setupFilesAfterEnv": [],
+	"testEnvironmentOptions": {
+		"customExportConditions": ["node", "node-addons"]
+ 	}
 }

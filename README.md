@@ -43,4 +43,14 @@
     - typescript: {}
   ```
 
-### microbundle 打包控制打包文件范围 ***未解决***
+### microbundle 打包控制打包文件范围 ***未解决*** **改用 *`rollup`* 打包**
+
+### jest 测试使用 jsdom 报错 *`ReferenceError: Vue is not defined`* 
+
+* 在 jest.congfig.json 中添加一下配置
+
+  ```json
+  "testEnvironmentOptions": {
+		"customExportConditions": ["node", "node-addons"]
+ 	}
+  ```
