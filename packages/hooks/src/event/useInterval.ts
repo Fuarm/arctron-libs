@@ -8,7 +8,7 @@ import useEffect from "../core/useEffect"
  * @returns 
  */
 function useInterval(fn: () => void, wait: number = 300, immediate: boolean = false) {
-  let timer: string | number | NodeJS.Timeout | undefined
+  let timer: number | undefined
   
   const start = () => timer = setInterval(fn, wait)
   

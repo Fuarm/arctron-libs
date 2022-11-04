@@ -1,5 +1,5 @@
 import { render, screen, fireEvent} from '@testing-library/vue'
-import { useEffect, useState, useInterval } from '../lib'
+import { useEffect, useState, useCountdown } from '../lib'
 
 describe('hooks-core', () => {
   test('useState：定义响应式变量，值修改和回调修改', () => {
@@ -57,3 +57,34 @@ describe('hooks-event', () => {
     
   })
 });
+
+describe('hooks-extra', () => {
+  test('useMemo', () => {
+    
+  })
+});
+
+describe('hooks-web', () => {
+  test('useCountdown: 倒计时', () => {
+    const TestComponetn = {
+      template: `
+      <p>Times clicked: {{timer?.seconds}}</p>
+      `,
+      setup() {
+        const [_, timer] = useCountdown({leftTime: 60 * 1000})
+        return { timer }
+      }
+    }
+
+    render(TestComponetn)
+    
+    setTimeout(() => {
+      expect(screen.queryByText('Times clicked: 58')).toBeTruthy()
+    }, 1000)
+  })
+
+  test('useECharts: 图表加载、注销、更新 option', () => {
+    
+  })
+});
+

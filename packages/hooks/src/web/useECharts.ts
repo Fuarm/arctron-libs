@@ -1,4 +1,4 @@
-import { init, ECharts } from "echarts"
+import { init, EChartsType } from "echarts"
 import { Ref } from "vue"
 import useEffect from "../core/useEffect"
 import useState from '../core/useState'
@@ -10,7 +10,7 @@ import useState from '../core/useState'
  */
 function useECharts<O extends {}, E extends HTMLElement>(querySelect: string | Ref<E | null>, option: O, deps: Ref<unknown>[] = []) {
 
-  let [chartInstance, setChartInstance] = useState<ECharts | null>(null)
+  let [chartInstance, setChartInstance] = useState<EChartsType | null>(null)
 
   useEffect(() => {
     const element = typeof querySelect !== "string"
@@ -23,12 +23,12 @@ function useECharts<O extends {}, E extends HTMLElement>(querySelect: string | R
      */
     const _chartInstance = chartInstance.value?.isDisposed() ? chartInstance.value : element ? init(element) : null
     _chartInstance?.setOption(option, true)
-    setChartInstance(_chartInstance)
+    setChartInstance(_chartInstance as EChartsType)
     
     return () => setChartInstance(_chartInstance?.dispose() || null);
   }, [...deps])
 
-  return chartInstance as Ref<ECharts>
+  return chartInstance as Ref<EChartsType>
 }
 
 export default useECharts

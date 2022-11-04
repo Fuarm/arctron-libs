@@ -29,6 +29,7 @@ specifiers:
   css-loader: ^6.7.1
   css-minimizer-webpack-plugin: ^4.2.2
   cssnano: ^5.1.13
+  dayjs: ^1.11.6
   dotenv-webpack: ^8.0.1
   echarts: ^5.4.0
   eslint: ^8.25.0
@@ -116,6 +117,7 @@ devDependencies:
   css-loader: 6.7.1_webpack@5.74.0
   css-minimizer-webpack-plugin: 4.2.2_webpack@5.74.0
   cssnano: 5.1.14_postcss@8.4.18
+  dayjs: 1.11.6
   dotenv-webpack: 8.0.1_webpack@5.74.0
   eslint: 8.26.0
   eslint-config-airbnb-typescript: 17.0.0_tkf7msa4amwkmmbh7cazfr3tlq
@@ -4994,6 +4996,10 @@ packages:
 
   /dateformat/3.0.3:
     resolution: {integrity: sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==}
+    dev: true
+
+  /dayjs/1.11.6:
+    resolution: {integrity: sha512-zZbY5giJAinCG+7AGaw0wIhNZ6J8AhWuSXKvuc1KAyMiRsvGQWqh4L+MomvhdAYjN+lqvVCMq1I41e3YHvXkyQ==}
     dev: true
 
   /debug/2.6.9:
