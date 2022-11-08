@@ -58,6 +58,7 @@ specifiers:
   minimist: ^1.2.7
   node-notifier: ^10.0.1
   ora: 5.4.1
+  package-tls: ^1.3.1
   postcss: ^8.4.18
   postcss-import: ^15.0.0
   postcss-loader: ^7.0.1
@@ -145,6 +146,7 @@ devDependencies:
   minimist: 1.2.7
   node-notifier: 10.0.1
   ora: 5.4.1
+  package-tls: 1.3.1
   postcss: 8.4.18
   postcss-import: 15.0.0_postcss@8.4.18
   postcss-loader: 7.0.1_igyeriywjd4lwzfk4socqbj2qi
@@ -5498,6 +5500,13 @@ packages:
       unbox-primitive: 1.0.2
     dev: true
 
+  /es-expand/2.5.0:
+    resolution: {integrity: sha512-gfJ2kc90Vo0iffqneYsu3Kxz7h6gSdFdF7vxHqUzrjMlciT8AshAo34ofWpvimR5tHSW1gSzB/Khf5sQIx8OOA==}
+    dependencies:
+      '@babel/runtime': 7.20.1
+      fun-exp: 1.0.0
+    dev: true
+
   /es-get-iterator/1.1.2:
     resolution: {integrity: sha512-+DTO8GYwbMCwbywjimwZMHp8AuYXOS2JZFWoi2AlPOS3ebnII9w/NLpNZtA7A0YLaVDw+O7KFCeoIV7OPvM7hQ==}
     dependencies:
@@ -6505,6 +6514,12 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /fun-exp/1.0.0:
+    resolution: {integrity: sha512-+6M3hqJjIaJ4ABSdAMhl5G1vD1qLK2gy2S+SAEzorHHjBdTu+u+Bu66JZAIs4axbWvxh/0SV/GXf33TW14SnzQ==}
+    dependencies:
+      '@babel/runtime': 7.20.1
+    dev: true
 
   /function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
@@ -9570,6 +9585,12 @@ packages:
   /p-try/2.2.0:
     resolution: {integrity: sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==}
     engines: {node: '>=6'}
+    dev: true
+
+  /package-tls/1.3.1:
+    resolution: {integrity: sha512-ulRUj5HEdjw+Cjcarjyvdszq9slaFD4U31ImUu1lWMeaMLFFSGC5fnyvebIv9/j0nUBBIJ0fUriuHYQCbWyvgg==}
+    dependencies:
+      es-expand: 2.5.0
     dev: true
 
   /param-case/3.0.4:

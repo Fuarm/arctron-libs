@@ -7,17 +7,14 @@ import useEffect from "../core/useEffect"
  * @param immediate 直接执行
  * @returns 
  */
-function useInterval(fn: () => void, wait: number = 300, immediate: boolean = false) {
+function useTimeout(fn: () => void, wait: number = 300, immediate: boolean = false) {
   let timer: number | undefined
   
-  const start = () => {
-    timer && stop()
-    timer = setInterval(fn, wait)
-  }
+  const start = () => timer = setTimeout(fn, wait)
   
   const stop = () => {
     if (timer) {
-      clearInterval(timer)
+      clearTimeout(timer)
       timer = undefined
     }
   }
@@ -25,7 +22,7 @@ function useInterval(fn: () => void, wait: number = 300, immediate: boolean = fa
   useEffect(() => {
     // 直接执行
     immediate && fn()
-    // 默认开启定时
+    // 执行 setTimeout
     start()
     return () => stop()
   }, [])
@@ -33,4 +30,4 @@ function useInterval(fn: () => void, wait: number = 300, immediate: boolean = fa
   return [start, stop] as const
 }
 
-export default useInterval
+export default useTimeout

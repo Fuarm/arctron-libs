@@ -1,10 +1,11 @@
-import { Ref, UnwrapRef } from "vue";
-import useEffect from "../core/useEffect";
+import { Ref } from "vue";
 import useState from "../core/useState";
+import useWatch from "../core/useWatch";
 
 function useMemo<T extends any>(fn: () => T, deps: Ref<unknown>[]) {
   const [result, setResult] = useState<T | undefined>(undefined);
-  useEffect(() => setResult(fn()), [...deps])
+
+  useWatch(() => setResult(fn()), [...deps])
 
   return result
 }

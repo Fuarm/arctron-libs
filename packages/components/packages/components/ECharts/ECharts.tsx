@@ -20,12 +20,18 @@ export type EChartsProps = {
 const ECharts = defineComponent({
 	name: 'ArcECharts',
   props: {
-    width: String,
-    height: String,
+    width: {
+      type: String,
+      default: '100%'
+    },
+    height: {
+      type: String,
+      default: '100%'
+    },
     option: Object
   },
   setup(props) {
-    const { width = '100%', height = '100%', option = {} } = props
+    const { width, height, option = {} } = props
 
     const [chartRef] = useState<HTMLDivElement | null>(null)
 

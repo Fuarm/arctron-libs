@@ -5,22 +5,29 @@ import { ArcBaseBox, ArcBaseLayout, ArcECharts } from '@arctron-cim/components-v
 
 import Count from './components/Count'
 
+import pkg from '../package.json' assert { type: 'json' };
+
 const App = defineComponent({
 	setup() {
-		const [echartsRef] = useState(null)
+		const [echartsRef] = useState<any>(null)
 		// app 启动日志
-		useCurrentInstance().app.$logs.printBg(['primary', 'success'], '系统版本', 'v1.0.24.beta.12')
+		useCurrentInstance().app.$logs.printBg(['primary', 'success'], '系统版本', `v${pkg.version}`)
 
 		return { echartsRef }
 	},
 	render() {
 		return (
-			<ArcBaseLayout width='300px' height='100vh' layout='right' padding={[12, 24]}>
-				<Count />
-				<ArcBaseBox width='120px' height='120px' radius bgColor={'#f55555'} bgImage={'https://i.scdn.co/image/ab6761610000e5eb006ff3c0136a71bfb9928d34'}>
-					<ArcECharts ref={'echartsRef'} />
+			<>
+				<ArcBaseBox width='120px' height='60px' radius bgColor={'#f55555'}>
+					测试虚拟节点：{`<></>`}
 				</ArcBaseBox>
-			</ArcBaseLayout>
+				<ArcBaseLayout width='300px' height='auto' layout='right' padding={[12, 24]}>
+					<Count />
+					<ArcBaseBox width='120px' height='120px' radius bgColor={'#f55555'}>
+						<ArcECharts ref={'echartsRef'} />
+					</ArcBaseBox>
+				</ArcBaseLayout>
+			</>
 		)
 	}
 })
