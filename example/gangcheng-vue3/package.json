@@ -7,6 +7,7 @@
   "license": "ISC",
   "scripts": {
     "dev": "webpack serve --mode development",
+    "build:dll": "webpack --config config/webpack.dll.js",
     "build": "webpack --mode production",
     "test": ""
   },
@@ -14,5 +15,8 @@
     "@arctron-cim/components-vue3": "workspace:^0.0.1",
     "@arctron-cim/hooks-vue3": "workspace:^0.0.1",
     "@arctron-cim/logs": "workspace:^0.0.1"
+  },
+  "devDependencies": {
+    "workbox-webpack-plugin": "^6.5.4"
   }
 }

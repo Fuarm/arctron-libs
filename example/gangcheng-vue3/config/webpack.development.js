@@ -1,10 +1,12 @@
+
+const chalk = require('chalk');
+const internalIp = require('internal-ip');
 const { join, resolve } = require('path')
 const FriendlyErrorsWebpackPlugin = require('@soda/friendly-errors-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // const logo = join(__dirname, 'icon.png')
 // const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const notifier = require('node-notifier')
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const webpack = require('webpack')
 
 const port = 3000
@@ -33,20 +35,24 @@ module.exports = {
 			__VUE_OPTIONS_API__: true,
 			__VUE_PROD_DEVTOOLS__: false 
 		}),
-		// new BundleAnalyzerPlugin(),
 		// new WebpackBuildNotifierPlugin({
-		//   title: '💿 虚拟宇宙React脚手架',
+		//   title: '💿 ',
 		//   logo,
 		//   suppressSuccess: true,
 		// }),
 		new HtmlWebpackPlugin({
 			title: '开发：港城 CIM 面板',
 			filename: 'index.html',
-			template: resolve(__dirname, '../public/index.html'),
+			template: resolve(__dirname, '../public/index.dev.html'),
 		}),
 		new FriendlyErrorsWebpackPlugin({
 			compilationSuccessInfo: {
-				messages: ['You application is running here http://localhost:' + port],
+				// messages: ['You application is running here http://localhost:' + port],
+				messages: [
+          `App running at:
+          - Local:     ${chalk.cyan.underline(`http://localhost:${port}/`)}
+          - Network:   ${chalk.cyan.underline(`http://${internalIp.v4.sync()}:${port}/`)}`,
+        ],
 				notes: ['💊 构建信息请及时关注窗口提示'],
 			},
 			onErrors: function (severity, errors) {

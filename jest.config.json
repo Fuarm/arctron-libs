@@ -4,7 +4,7 @@
 	"collectCoverage": true,
 	"testPathIgnorePatterns": ["/node_modules/"],
 	"coverageReporters": ["lcov", "json"],
-	"collectCoverageFrom": ["**/src/**"],
+	"collectCoverageFrom": ["packages/**/src/**"],
 	"transform": {
 		"^.+\\.tsx?$": [
 			"ts-jest",
