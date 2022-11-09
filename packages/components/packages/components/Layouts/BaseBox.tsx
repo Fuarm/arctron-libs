@@ -30,7 +30,7 @@ export type BaseBoxProps = {
   /**
    * 边距：设置容器内边距
    */
-  padding?: Tuple<number, 2 | 3 | 4>
+  padding?: Tuple<number, 1 | 2 | 3 | 4>
 }
 
 function BaseBox(props: BaseBoxProps, { slots }) {

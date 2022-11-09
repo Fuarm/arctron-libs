@@ -18,11 +18,8 @@ const App = defineComponent({
 	render() {
 		return (
 			<>
-				<ArcBaseBox width='120px' height='60px' radius bgColor={'#f55555'}>
-					测试虚拟节点：{`<></>`}
-				</ArcBaseBox>
 				<ArcBaseLayout width='300px' height='auto' layout='right' padding={[12, 24]}>
-					<Count />
+					<Count class={'mb-6'} />
 					<ArcBaseBox width='120px' height='120px' radius bgColor={'#f55555'}>
 						<ArcECharts ref={'echartsRef'} />
 					</ArcBaseBox>
