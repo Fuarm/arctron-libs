@@ -5,3 +5,9 @@ declare module 'vue' {
     $logs: Logs
   }
 }
+declare global {
+  export interface EventTarget {
+    value: any
+  }
+}
+

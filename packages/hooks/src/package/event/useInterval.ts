@@ -12,6 +12,8 @@ function useInterval(fn: () => void, wait: number = 300, immediate: boolean = fa
   
   const start = () => {
     timer && stop()
+    // 直接执行
+    immediate && fn()
     timer = setInterval(fn, wait)
   }
   
@@ -23,8 +25,6 @@ function useInterval(fn: () => void, wait: number = 300, immediate: boolean = fa
   }
  
   useEffect(() => {
-    // 直接执行
-    immediate && fn()
     // 默认开启定时
     start()
     return () => stop()

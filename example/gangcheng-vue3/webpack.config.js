@@ -50,7 +50,8 @@ const webpackBaseConfig = {
 				test: /\.css$/i,
 				include: [resolve(__dirname, 'src'), resolve(__dirname, 'node_modules')],
 				use: [
-					MiniCssExtractPlugin.loader,
+					// MiniCssExtractPlugin.loader,
+					'style-loader',
 					{ loader: 'css-loader', options: { importLoaders: 1 } },
 					'postcss-loader',
 				],

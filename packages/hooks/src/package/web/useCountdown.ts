@@ -3,7 +3,7 @@ import useEffect from '../core/useEffect';
 import useState from '../core/useState';
 import useInterval from '../event/useInterval';
 import useMemo from '../extra/useMemo';
-import { isNumber } from '../utils';
+import { isNumber } from '../../utils';
 
 export type TDate = dayjs.ConfigType;
 
@@ -80,13 +80,16 @@ function useCountdown(options: Options = {}, immediate?: boolean) {
     }
   }, interval, true)
 
+  // 监测 target 更新，自动触发定时器重置
+  useEffect(() => start(), [updateTarget])
+
   const formatTimer = useMemo<Timer>(() => parseMs(timeleft.value), [timeleft])
 
   // 默认不启动倒计时
   !immediate && useEffect(() => stop(), [])
 
   // 重置
-  const reset = () => (setUpdateTarget(Date.now()), start())
+  const reset = () => setUpdateTarget(Date.now())
 
   return [timeleft, formatTimer, reset] as const
 }

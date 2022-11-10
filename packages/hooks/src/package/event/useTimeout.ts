@@ -10,7 +10,10 @@ import useEffect from "../core/useEffect"
 function useTimeout(fn: () => void, wait: number = 300, immediate: boolean = false) {
   let timer: number | undefined
   
-  const start = () => timer = setTimeout(fn, wait)
+  const start = () => {
+    timer && stop()
+    timer = setTimeout(fn, wait)
+  }
   
   const stop = () => {
     if (timer) {

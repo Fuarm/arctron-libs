@@ -7,6 +7,7 @@ import useECharts from './web/useEcharts'
 import useCurrentInstance from './web/useCurrentInstance'
 import useCountdown from './web/useCountdown'
 import useNetwork from './web/useNetwork'
+import useDebounce from './web/useDebounce'
 
 export {
   useState,
@@ -17,5 +18,6 @@ export {
   useECharts,
   useCurrentInstance,
   useCountdown,
-  useNetwork
+  useNetwork,
+  useDebounce
 }

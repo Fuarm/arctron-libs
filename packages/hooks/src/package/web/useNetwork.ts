@@ -2,7 +2,7 @@ import { Ref } from 'vue';
 import useEffect from '../core/useEffect';
 import useState from '../core/useState';
 import useEventListener from '../event/useEventListener';
-import { isObject } from '../utils';
+import { isObject } from '../../utils';
 
 export interface NetworkState {
   since?: Date;
@@ -40,6 +40,11 @@ function getConnectionProperty(): NetworkState {
   };
 }
 
+/**
+ * useNetwork 网络链接情况
+ * @public
+ * @returns 
+ */
 function useNetwork(): Ref<NetworkState> {
   const [state, setState] = useState({
     since: undefined,

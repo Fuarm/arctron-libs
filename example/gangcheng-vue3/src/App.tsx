@@ -12,7 +12,7 @@ const App = defineComponent({
 		const [echartsRef] = useState<any>(null)
 		// app 启动日志
 		useCurrentInstance().app.$logs.printBg(['primary', 'success'], '系统版本', `v${pkg.version}`)
-
+		console.log(useCurrentInstance())
 		return { echartsRef }
 	},
 	render() {

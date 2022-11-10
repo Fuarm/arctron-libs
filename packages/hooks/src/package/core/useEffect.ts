@@ -1,6 +1,7 @@
 import { watch, onMounted, onUnmounted, Ref } from 'vue'
 /**
  * useEffect
+ * @public
  * @param fn - 执行函数
  * @param deps - 依赖
  */

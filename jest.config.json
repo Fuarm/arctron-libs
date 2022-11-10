@@ -4,12 +4,29 @@
 	"collectCoverage": true,
 	"testPathIgnorePatterns": ["/node_modules/"],
 	"coverageReporters": ["lcov", "json"],
-	"collectCoverageFrom": ["packages/**/src/**"],
+	"collectCoverageFrom": [
+		"packages/**/src/package/**/*.{ts,tsx}"
+	],
 	"transform": {
-		"^.+\\.tsx?$": [
-			"ts-jest",
+		"^.+\\.(ts|tsx)?$": [
+			"@swc/jest",
 			{
-				"tsconfig": "tsconfig.spec.json"
+				"jsc": {
+					"target": "es2021",
+					"parser": {
+						"syntax": "typescript",
+						"tsx": true,
+						"dynamicImport": true
+					},
+					"transform": {
+						"legacyDecorator": true,
+						"decoratorMetadata": true,
+						"react": {
+							"runtime": "automatic",
+							"importSource": "vue-jsx-runtime"
+						}
+					}
+				}
 			}
 		]
 	},
