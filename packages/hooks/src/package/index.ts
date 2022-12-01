@@ -8,6 +8,7 @@ import useCurrentInstance from './web/useCurrentInstance'
 import useCountdown from './web/useCountdown'
 import useNetwork from './web/useNetwork'
 import useDebounce from './web/useDebounce'
+import useEventListener from './event/useEventListener'
 
 export {
   useState,
@@ -19,5 +20,6 @@ export {
   useCurrentInstance,
   useCountdown,
   useNetwork,
-  useDebounce
+  useDebounce,
+  useEventListener
 }

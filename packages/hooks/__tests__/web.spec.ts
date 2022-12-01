@@ -1,6 +1,6 @@
 import { fireEvent } from "@testing-library/vue";
 import { render, screen } from "@testing-library/vue";
-import { useCountdown, useCurrentInstance, useDebounce, useState, useTimeout } from "../src/package";
+import { useCountdown, useCurrentInstance, useDebounce, useNetwork, useState, useTimeout } from "../src/package";
 
 describe('useDebounce', () => {
   test('参数 Ref, wait: 200ms', async () => {
@@ -191,4 +191,31 @@ describe('useCountdown', () => {
     await jest.advanceTimersByTime(10000)
     expect(screen.queryByText('onEnd: yes')).toBeTruthy()
   })
+});
+
+describe('useNetwork', () => {
+  test('toggle network state', () => {
+    const TestComponetn = {
+      template: `
+      <p>{{state.online}}</p>
+      `,
+      setup() {
+        const state = useNetwork()
+        return { state }
+      }
+    }
+
+    render(TestComponetn)
+    expect('true').toBeTruthy();
+
+    window.dispatchEvent(new Event('offline'));
+    expect('false').toBeTruthy();
+
+    window.dispatchEvent(new Event('online'));
+    expect('true').toBeTruthy();
+  })
+});
+
+describe('useCharts', () => {
+
 });

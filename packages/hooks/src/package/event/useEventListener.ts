@@ -30,7 +30,7 @@ function useEventListener<W extends keyof WindowEventMap, H extends keyof HTMLEl
     return () => {
       targetElement.removeEventListener(eventName, handler);
     };
-  }, [element!]);
+  }, element ? [element] : []);
 }
 
 export default useEventListener
