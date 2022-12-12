@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue'
+import { defineComponent, toRefs } from 'vue'
 import { EChartsOption } from "echarts"
 import { useState, useECharts } from '@arctron-cim/hooks-vue3'
 
@@ -6,11 +6,11 @@ export type EChartsProps = {
   /**
    * Box 宽，默认单位px，默认单位仅支持 number
    */
-  width?: string | number,
+  width?: string,
   /**
    * Box 高，默认单位px，默认单位仅支持 number
    */
-  height?: string | number,
+  height?: string,
   /**
    * echart 配置项
    */
@@ -31,16 +31,14 @@ const ECharts = defineComponent({
     option: Object
   },
   setup(props) {
-    const { width, height, option = {} } = props
+    const { width, height, option } = toRefs(props)
 
     const [chartRef] = useState<HTMLDivElement | null>(null)
 
-    const [optionRef] = useState<EChartsOption>(option)
-
-    const echartInstance = useECharts(chartRef, option, [optionRef])
+    const echartInstance = useECharts(chartRef, option || {})
 
     // 生成 style 变量
-    const style = { width, height }
+    const style = { width: width.value, height: height.value }
 
     return {
       chartRef,
