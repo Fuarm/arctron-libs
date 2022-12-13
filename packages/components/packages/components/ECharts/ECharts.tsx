@@ -28,14 +28,17 @@ const ECharts = defineComponent({
       type: String,
       default: '100%'
     },
-    option: Object
+    option: {
+      type: Object,
+      default: () => ({})
+    }
   },
   setup(props) {
     const { width, height, option } = toRefs(props)
 
     const [chartRef] = useState<HTMLDivElement | null>(null)
 
-    const echartInstance = useECharts(chartRef, option || {})
+    const echartInstance = useECharts(chartRef, option)
 
     // 生成 style 变量
     const style = { width: width.value, height: height.value }
