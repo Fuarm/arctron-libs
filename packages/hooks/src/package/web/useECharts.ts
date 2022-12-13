@@ -21,7 +21,7 @@ function useECharts<O extends {}, E extends HTMLElement>(querySelect: string | R
      * 使用响应式 ref 绑定 echart init 对象，导致tooltip-trigger: 'axis' 无效
      * 使用局部对象
      */
-    const _chartInstance = chartInstance.value?.isDisposed() ? chartInstance.value : element ? init(element) : null
+    const _chartInstance = chartInstance.value ? chartInstance.value : element ? init(element) : null
     _chartInstance?.setOption(option.value, true)
     setChartInstance(_chartInstance as EChartsType)
     

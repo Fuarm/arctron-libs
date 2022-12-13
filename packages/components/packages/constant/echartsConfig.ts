@@ -1,3 +1,5 @@
+import { XAXisComponentOption, YAXisComponentOption } from "echarts"
+
 // 基础的字体大小
 export const defSize = 14
 
@@ -16,11 +18,11 @@ export const defGrid = {
 }
 
 // 基础的 xAxis
-export const defxAxis = {
+export const defXAxis: XAXisComponentOption = {
   axisLine: {
     show: true, // 隐藏X轴轴线
     lineStyle: {
-      color: 'rgba(255, 255, 255, 0.25)'
+      color: 'rgba(255, 255, 255, 0.45)'
     }
   },
   axisTick: {
@@ -30,16 +32,22 @@ export const defxAxis = {
     show: true,
     margin: 10,
     fontSize: defSize,
-    color: 'rgba(255, 255, 255, 0.45)' // X轴文字颜色
+    color: 'rgba(255, 255, 255, 0.85)' // X轴文字颜色
   }
 }
 
 // 基础的 yAxis
-export const defyAxis = {
+export const defYAxis: YAXisComponentOption = {
   axisLabel: {
     show: true,
     margin: 10,
     fontSize: defSize,
-    color: 'rgba(255, 255, 255, 0.45)' // X轴文字颜色
+    color: 'rgba(255, 255, 255, 0.85)' // X轴文字颜色
+  },
+  splitLine: {
+    lineStyle: {
+      type: 'dashed',
+      color: 'rgba(255, 255, 255, 0.45)'
+    }
   }
 }

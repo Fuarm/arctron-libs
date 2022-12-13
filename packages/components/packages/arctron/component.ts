@@ -1,9 +1,9 @@
 import { Plugin } from "vue";
-import { ArcBaseBox, ArcBaseLayout, ArcECharts, ArcBarChart1 } from "../components";
+import { ArcBaseBox, ArcBaseLayout, ArcECharts, ArcBaseECharts } from "../components";
 
 export default [
   ArcBaseBox,
   ArcBaseLayout,
   ArcECharts,
-  ArcBarChart1
+  ArcBaseECharts
 ] as Plugin[]

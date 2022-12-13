@@ -17,6 +17,10 @@ export interface BaseChartProps {
    */
   height?: string,
   /**
+   * 图表 key
+   */
+  type?: string,
+  /**
    * echart 数据源
    */
   dataSource: DataSource | DataSource[],

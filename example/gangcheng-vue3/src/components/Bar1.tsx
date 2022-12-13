@@ -1,7 +1,5 @@
-import { EChartsOption, SeriesOption } from 'echarts'
-import { defxAxis, defyAxis, defGrid } from '../../constant/echartsConfig'
-import { DataSource, GeneratorOptsFn } from '../../types/echarts'
-import { createECharts } from '../ECharts/baseECharts'
+import { createECharts, GeneratorOptsFn } from '@arctron-cim/components-vue3'
+import { SeriesOption } from 'echarts'
 
 // 柱状图1： echart 图表配置
 const generatorEchartsOption: GeneratorOptsFn = (dataSource, config = {}) => {
@@ -25,25 +23,23 @@ const generatorEchartsOption: GeneratorOptsFn = (dataSource, config = {}) => {
 
   return {
     grid: {
-      ...defGrid,
+      top: '12%',
     },
     xAxis: {
-      ...defxAxis,
       data: ['', ...xData, '']
     },
-    yAxis: defyAxis,
+    yAxis: {},
     series
   }
 }
 
 /**
- * 柱状图组件1
- * @param props 
- * @returns 
+ * 柱状图图表组件1
  */
-const BarChart1 = createECharts(generatorEchartsOption)
+const BarChart = createECharts(generatorEchartsOption)
 
-BarChart1.name = 'ArcBarChart1'
+// 重写组件 name
+BarChart.name = 'ArcBarChart'
 
-export default BarChart1
+export default BarChart
 
