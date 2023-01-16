@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue'
 import { useState, useCurrentInstance, useEffect } from '@arctron-cim/hooks-vue3'
 
-import { ArcBaseBox, ArcBaseLayout, ArcBaseECharts, DataSource, createdCustomGenerator, GeneratorOptsFn } from '@arctron-cim/components-vue3'
+import { ArcBaseBox, ArcBaseLayout, ArcBaseECharts, DataSource, createdCustomGenerator, GeneratorOptsFn, Test } from '@arctron-cim/components-vue3'
 import { SeriesOption } from 'echarts'
 
 import Count from './components/Count'
@@ -74,6 +74,7 @@ const App = defineComponent({
 					<ArcBaseBox width='400px' height='120px' radius bgColor={'#559999'}>
 						<ArcBaseECharts type={'bar2'} dataSource={this.dataSource} config={{xData: ['1月', '2月', '3月', '4月', '5月']}} />
 					</ArcBaseBox>
+					<Test label={'12345frefadfdsfaf'} />
 				</ArcBaseLayout>
 			</>
 		)

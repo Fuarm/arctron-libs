@@ -1,6 +1,6 @@
 import { defineComponent } from 'vue'
 import type { Tuple } from '../../types'
-import './index.less'
+import './index.css'
 
 export type BaseLayoutProps = {
   /**
@@ -55,9 +55,9 @@ function Baselayout(props: BaseLayoutProps, { slots }) {
   return () => <div class={['arc-base-layout flex flex-col', layoutResult, blurResult]} style={style}>{ slots.default?.() }</div>
 }
 
-const BaselayoutComp = defineComponent(Baselayout)
+// const BaselayoutComp = defineComponent(Baselayout)
 
-BaselayoutComp.name  = 'ArcBaselayout'
-BaselayoutComp.props = ['width', 'height', 'bgColor', 'bgImage', 'blur', 'layout', 'padding']
+// BaselayoutComp.name  = 'ArcBaselayout'
+// BaselayoutComp.props = ['width', 'height', 'bgColor', 'bgImage', 'blur', 'layout', 'padding']
 
-export default BaselayoutComp
+export default Baselayout

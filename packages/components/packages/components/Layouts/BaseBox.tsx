@@ -1,6 +1,6 @@
 import { defineComponent } from 'vue'
 import { Tuple } from '../../types'
-import './index.less'
+import './index.css'
 
 export type BaseBoxProps = {
   /**
@@ -56,9 +56,9 @@ function BaseBox(props: BaseBoxProps, { slots }) {
   return () => <div class={['arc-base-box', blurResult, radiusResult]} style={{...style}}>{ slots.default?.() }</div>
 }
 
-const BaseBoxComp = defineComponent(BaseBox)
+// const BaseBoxComp = defineComponent(BaseBox)
 
-BaseBoxComp.name  = 'ArcBaseBox'
-BaseBoxComp.props = ['width', 'height', 'bgColor', 'bgImage', 'blur', 'radius', 'padding']
+// BaseBoxComp.name  = 'ArcBaseBox'
+// BaseBoxComp.props = ['width', 'height', 'bgColor', 'bgImage', 'blur', 'radius', 'padding']
 
-export default BaseBoxComp
+export default BaseBox

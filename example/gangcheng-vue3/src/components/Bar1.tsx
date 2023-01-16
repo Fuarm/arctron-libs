@@ -11,14 +11,19 @@ const generatorEchartsOption: GeneratorOptsFn = (dataSource, config = {}) => {
     barCategoryGap: '-220%',
     symbol: 'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',
     itemStyle: {
-      opacity: 0.6
+      // opacity: 0.6
     },
     emphasis: {
       itemStyle: {
-        opacity: 1
+        color: `rgba(255, 255, 255, 1)`
       }
     },
-    data: [0, ...item.data, 0]
+    data: [0, ...item.data.map((item, i) => ({
+      value: item,
+      itemStyle: {
+        color: `rgba(255, 255, 255, ${0.8 - i * 0.15})`
+      }
+    })), 0]
   })) || []
 
   return {

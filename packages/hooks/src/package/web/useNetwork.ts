@@ -75,11 +75,16 @@ function useNetwork(): Ref<NetworkState> {
     }));
   };
   
-  window.addEventListener(NetworkEventType.ONLINE, onOnline);
-  window.addEventListener(NetworkEventType.OFFLINE, onOffline);
+  // window.addEventListener(NetworkEventType.ONLINE, onOnline);
+  // window.addEventListener(NetworkEventType.OFFLINE, onOffline);
+
+  useEventListener(NetworkEventType.ONLINE, onOnline);
+  useEventListener(NetworkEventType.OFFLINE, onOffline);
 
   const connection = getConnection();
-  connection?.addEventListener(NetworkEventType.CHANGE, onConnectionChange);
+  connection && useEventListener(NetworkEventType.CHANGE, onConnectionChange, connection);
+
+  // connection?.addEventListener(NetworkEventType.CHANGE, onConnectionChange);
 
   return state;
 }
